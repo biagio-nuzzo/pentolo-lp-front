@@ -1,0 +1,94 @@
+name: Deploy pentolo-lp
+
+on:
+  workflow_dispatch:
+    inputs:
+      service_id:
+        description: 'Service ID'
+        required: true
+        default: 'pentolo-lp'
+      backend_duration_minutes:
+        description: 'Durata backend in minuti'
+        required: true
+        default: '120'
+        type: number
+      enable_runner_ssh:
+        description: 'Abilita SSH sul runner'
+        required: false
+        default: 'false'
+        type: boolean
+      runner_ssh_password:
+        description: 'Password SSH runner'
+        required: false
+        default: ''
+        type: string
+      env_vars_json:
+        description: 'Environment variables as JSON'
+        required: false
+        default: '{}'
+        type: string
+
+env:
+  SERVICE_ID: ${{ github.event.inputs.service_id }}
+
+jobs:
+  deploy-service:
+    name: Deploy pentolo-lp
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Parse environment variables
+        id: parse_env
+        run: |
+          echo '${{ github.event.inputs.env_vars_json }}' > /tmp/env_vars.json
+          cat /tmp/env_vars.json
+          
+          python3 -c "
+          import json, os
+          with open('/tmp/env_vars.json') as f:
+              env_vars = json.load(f)
+          for key, value in env_vars.items():
+              with open(os.environ['GITHUB_ENV'], 'a') as env_file:
+                  env_file.write(f'{key}={value}\n')
+          "
+
+      - name: Load Atlas manifest
+        id: endpoints
+        run: |
+          MANIFEST_FILE="atlas.json"
+          if [ ! -f "$MANIFEST_FILE" ]; then
+            echo "❌ Manifest not found: $MANIFEST_FILE"
+            exit 1
+          fi
+          python3 - <<'PY' >> $GITHUB_OUTPUT
+          import json, base64, sys
+          with open("atlas.json") as f:
+              data = json.load(f)
+          endpoints = data.get("endpoints")
+          if not isinstance(endpoints, list) or not endpoints:
+              print("Missing endpoints in atlas.json", file=sys.stderr)
+              sys.exit(1)
+          b64 = base64.b64encode(json.dumps(endpoints).encode()).decode()
+          print(f"b64={b64}")
+          PY
+
+      - name: Deploy to Atlas
+        uses: ./.github/actions/atlas-deploy
+        with:
+          service_id: ${{ env.SERVICE_ID }}
+          peer_prefix: 'runner'
+          backend_duration_minutes: ${{ github.event.inputs.backend_duration_minutes }}
+          endpoints_json_b64: ${{ steps.endpoints.outputs.b64 }}
+          enable_runner_ssh: ${{ github.event.inputs.enable_runner_ssh }}
+          runner_ssh_password: ${{ github.event.inputs.runner_ssh_password }}
+          custom_steps_file: '.github/deploy-scripts/pentolo-lp/deploy.sh'
+          gateway_ssh_key: ${{ secrets.ATLAS_GATEWAY_SSH_KEY }}
+          gateway_ip: ${{ secrets.ATLAS_GATEWAY_IP }}
+          gateway_user: ${{ secrets.ATLAS_GATEWAY_USER }}
+          gateway_fqdn: ${{ secrets.ATLAS_GATEWAY_FQDN }}
+          registry_url: ${{ secrets.ATLAS_REGISTRY_URL }}
+          registry_token: ${{ secrets.ATLAS_REGISTRY_TOKEN }}
