@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "service_id": "pentolo-lp",
+  "endpoints": [
+    {
+      "port": 8000,
+      "protocol": "http",
+      "expose": "host",
+      "public_port": null,
+      "health_path": "/"
+    }
+  ]
+}
