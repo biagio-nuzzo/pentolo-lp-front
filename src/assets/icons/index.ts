@@ -1,0 +1,5 @@
+export { default as ChevronDownIcon } from "./ChevronDownIcon"
+export { default as CheckIcon } from "./CheckIcon"
+export { default as FacebookIcon } from "./FacebookIcon"
+export { default as InstagramIcon } from "./InstagramIcon"
+export { default as WebsiteIcon } from "./WebsiteIcon"

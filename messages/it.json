@@ -1,0 +1,88 @@
+{
+  "Manifest": {
+    "name": "Pentolo® Event",
+    "short_name": "Pentolo® Event",
+    "description": "Pentolo® Event - Dove la cucina incontra lo spettacolo. La nuova dimensione dello show cooking. Scopri il cuore dell'evento."
+  },
+  "LocaleLayout": {
+    "siteName": "Pentolo® Event",
+    "applicationName": "Pentolo® Event",
+    "author": "",
+    "publisher": ""
+  },
+
+  "Error": {
+    "title": "Qualcosa è andato storto!",
+    "description": "<p>Purtroppo si è verificato un errore.</p><p>Puoi provare a <retry>ricaricare la pagina</retry> che stavi visitando.</p>",
+    "cta": "Torna alla Home"
+  },
+  "LanguageDropdown": {
+    "label": "Cambia lingua",
+    "locale": "{locale, select, en {Inglese} it {Italiano} other {Sconosciuto}}"
+  },
+  "Navigation": {
+    "home": "Home"
+  },
+  "NotFound": {
+    "title": "Pagina non trovata",
+    "description": "Controlla l'indirizzo nella barra del browser o usa la navigazione per andare a una pagina conosciuta.",
+    "cta": "Torna alla Home"
+  },
+
+  "IndexPage": {
+    "meta": {
+      "description": "Pentolo® Event – La nuova dimensione dello show cooking. Dove la cucina incontra lo spettacolo. Scopri il cuore dell'evento.",
+      "keywords": "pentolo event, show cooking, catering, eventi, cucina, spettacolo, padella gigante, wedding",
+      "ogTitle": "Pentolo® Event – Dove la cucina incontra lo spettacolo",
+      "ogDescription": "La nuova dimensione dello show cooking. Cucina dal vivo per eventi, matrimoni, catering e resort.",
+      "ogImageAlt": "Anteprima homepage Pentolo® Event"
+    },
+
+    "hero": {
+      "titleStart": "Dove la cucina incontra",
+      "titleEnd": "lo spettacolo.",
+      "description": "La nuova dimensione dello show cooking."
+    },
+
+    "heartOfEvent": {
+      "title": "Il cuore dell'evento",
+      "cta": "Scopri di più",
+      "p1": "Ogni evento ha un momento che lo rende memorabile.",
+      "p2a": "Non è solo il piatto servito.",
+      "p2b": "È ciò che accade prima.",
+      "p3a": "Il movimento deciso della spadellata.",
+      "p3b": "Il profumo che si diffonde.",
+      "p3c": "Le persone che si avvicinano.",
+      "p4": "Con Pentolo Event, la cucina non è più dietro le quinte."
+    },
+
+    "powerAndScenography": {
+      "title": "Potenza e scenografia",
+      "intro": "Grazie alla sua generosa dimensione da 120 cm:",
+      "bullet1": "Puoi cucinare fino a 120 porzioni contemporaneamente",
+      "bullet2": "Coinvolgere gli ospiti in un vero cooking show",
+      "bullet3": "Trasformare un gesto quotidiano in esperienza collettiva",
+      "structure": "La struttura in acciaio inox, il sistema basculante e la certificazione CEE garantiscono solidità, sicurezza e continuità.",
+      "highlight": "È uno strumento progettato per essere protagonista."
+    },
+
+    "cta": "Scopri di più",
+
+    "bigThings": {
+      "title": "Per chi ama fare le cose",
+      "titleItalic": " in grande",
+      "idealFor": "Ideale per",
+      "idealForDescription": "Per chi non vuole semplicemente organizzare un evento, ma creare un momento da ricordare.",
+      "bullet1": "Eventi importanti e grandi feste private",
+      "bullet2": "Wedding",
+      "bullet3": "Resort e Ville",
+      "bullet4": "Catering"
+    },
+
+    "ad": {
+      "first": "Cucinare non",
+      "second": "è mai stato così",
+      "third": "coinvolgente."
+    }
+  }
+}

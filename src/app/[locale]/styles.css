@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+/* FONTS */
+@font-face {
+  font-family: "Libre Franklin";
+  src:
+    url("/fonts/LibreFranklin-VariableFont_wght.woff2") format("woff2"),
+    url("/fonts/LibreFranklin-VariableFont_wght.woff") format("woff"),
+    url("/fonts/LibreFranklin-VariableFont_wght.ttf") format("truetype");
+}
+
+:root {
+  --white: oklch(100% 0.00011 271.152);
+  --black: oklab(0% 0 0);
+
+  --primary: oklch(96.085% 0.21319 112.376);
+  --surface: oklab(0% 0 0 / 0.03);
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 1.125rem;
+  background-color: var(--surface);
+  overflow-x: hidden;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+@theme {
+  --color-white: var(--white);
+  --color-black: var(--black);
+
+  --color-primary: var(--primary);
+}
+
+/* Scrollbar — Chrome, Edge, Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 15px;
+  border: 1.5px solid var(--black);
+}
+
+/* Scrollbar — Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) var(--black);
+}

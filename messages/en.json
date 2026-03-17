@@ -1,0 +1,88 @@
+{
+  "Manifest": {
+    "name": "Pentolo® Event",
+    "short_name": "Pentolo® Event",
+    "description": "Pentolo® Event - Where cuisine meets spectacle. The new dimension of show cooking. Discover the heart of the event."
+  },
+  "LocaleLayout": {
+    "siteName": "Pentolo® Event",
+    "applicationName": "Pentolo® Event",
+    "author": "",
+    "publisher": ""
+  },
+
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "cta": "Back to Home"
+  },
+  "LanguageDropdown": {
+    "label": "Change language",
+    "locale": "{locale, select, en {English} it {Italian} other {Unknown}}"
+  },
+  "Navigation": {
+    "home": "Home"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+    "cta": "Back to Home"
+  },
+
+  "IndexPage": {
+    "meta": {
+      "description": "Pentolo Event – The new dimension of show cooking. Where cuisine meets spectacle. Discover the heart of the event.",
+      "keywords": "pentolo event, show cooking, catering, events, cuisine, spectacle, giant pan, wedding",
+      "ogTitle": "Pentolo Event – Where Cuisine Meets Spectacle",
+      "ogDescription": "The new dimension of show cooking. Live cooking for events, weddings, catering, and resorts.",
+      "ogImageAlt": "Pentolo Event homepage preview"
+    },
+
+    "hero": {
+      "titleStart": "Where cuisine meets",
+      "titleEnd": "spectacle.",
+      "description": "The new dimension of show cooking."
+    },
+
+    "heartOfEvent": {
+      "title": "The heart of the event",
+      "cta": "Learn more",
+      "p1": "Every event has a moment that makes it unforgettable.",
+      "p2a": "It's not just the dish being served.",
+      "p2b": "It's what happens before.",
+      "p3a": "The decisive motion of the pan toss.",
+      "p3b": "The aroma spreading through the air.",
+      "p3c": "The people drawing closer.",
+      "p4": "With Pentolo Event, cooking is no longer behind the scenes."
+    },
+
+    "powerAndScenography": {
+      "title": "Power and scenography",
+      "intro": "Thanks to its generous 120 cm size:",
+      "bullet1": "You can cook up to 120 servings at once",
+      "bullet2": "Engage your guests in a real cooking show",
+      "bullet3": "Turn an everyday gesture into a collective experience",
+      "structure": "The stainless steel structure, tilting system, and CEE certification ensure solidity, safety, and reliability.",
+      "highlight": "It is a tool designed to be the protagonist."
+    },
+
+    "cta": "Learn more",
+
+    "bigThings": {
+      "title": "For those who love to do things",
+      "titleItalic": " big",
+      "idealFor": "Ideal for",
+      "idealForDescription": "For those who don't just want to organize an event, but create a moment to remember.",
+      "bullet1": "Major events and large private parties",
+      "bullet2": "Weddings",
+      "bullet3": "Resorts and Villas",
+      "bullet4": "Catering"
+    },
+
+    "ad": {
+      "first": "Cooking has",
+      "second": "never been this",
+      "third": "engaging."
+    }
+  }
+}
